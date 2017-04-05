@@ -30,7 +30,7 @@ namespace WindowsFormsApplication7
 
             set
             {
-              //
+                //
                 eventDays = value;
             }
         }
@@ -65,7 +65,7 @@ namespace WindowsFormsApplication7
             hlist.CreateHoliday(CURRENTDATE);
 
             solar24 = new SolarTerma(CURRENTDATE);
-           
+
 
 
         }
@@ -84,7 +84,6 @@ namespace WindowsFormsApplication7
                 {
                     return;
                 }
-                //setDay(CURRENTDATE);
             }
         }
 
@@ -97,15 +96,11 @@ namespace WindowsFormsApplication7
             ColumnCount = columns;
             RowCount = rows;
             Controls.Clear();
-            int dummyDate = 1;
 
 
             DateTime startNum = new DateTime(CURRENTDATE.Year, CURRENTDATE.Month, 1);
             int endNum = DateTime.DaysInMonth(CURRENTDATE.Year, CURRENTDATE.Month);
             int startWeek = (int)startNum.DayOfWeek;
-
-            int index =0;//  = i + startWeek - 1; //인덱스로 날짜요일 저장
-                      // exLabel[index].Text = string.Format("{0:0}", i);
 
             this.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             this.Padding = new Padding(0);
@@ -130,9 +125,6 @@ namespace WindowsFormsApplication7
             {
                 for (int j = 0; j < ColumnCount; j++)
                 {
-
-
-
                     DisplayPanel floorTop = new DisplayPanel();
                     DisplayPanel floorBottm = new DisplayPanel();
                     DisplayPanel floorContainer = new DisplayPanel();
@@ -150,47 +142,13 @@ namespace WindowsFormsApplication7
                     {
                         lblDay.Text = System.Threading.Thread.CurrentThread.CurrentCulture.DateTimeFormat.AbbreviatedDayNames[j][0].ToString();
                         lblDay.ForeColor = System.Drawing.Color.Black;
-                        //  lblDay.BackColor = System.Drawing.Color.Azure;
-
-
-
-                        //   lblDay.Visible = false;
-                        //    lblSolar24.Visible = false;
                         lblEvent1.Height = 0;
-                        //   lblEvent2Height = 0;
-                        // lblEvent3.Height = 0;
                     }
                     else
                     {
-
-                        ////날짜 만들기
-                        //if (dummyDate >= startWeek)
-                        //{
-                        //    index = dummyDate - startWeek; //인덱스로 날짜요일 저장
-                        //    SettingDay2 = CURRENTDATE.ToString("MM") + index.ToString("00");
-                        //}
-                        //else SettingDay2 = "0000";
-
-                        //dummyDate++;
-
-
-
-                       
                         lblDay.ForeColor = System.Drawing.Color.Black;
                         lblDay.BackColor = System.Drawing.Color.White;
-                       // lblDay.Text = SettingDay2.Substring(3,1);
-
                         lblSolar24.ForeColor = System.Drawing.Color.Black;
-                        //   lblSolar24.BackColor = System.Drawing.Color.Aqua;
-                        //  lblSolar24.Text = "sfd";
-                        //
-                       // lblEvent3.Text = "event3";
-                       // lblEvent2.Text = "event2";
-                        //  lblEvent1.Text = "event1";
-
-                        //이벤트 표시
-                       // SetEvent();
-
 
                         lblDay.MouseClick += new MouseEventHandler(lblDay_Click); //이벤트 등록
 
@@ -202,27 +160,16 @@ namespace WindowsFormsApplication7
                     }
 
                     lblEvent3.Dock = DockStyle.Top;
-                    // lblEvent3.Dock = DockStyle.Left;
-                    lblEvent3.Padding = new Padding(0);
-                    // lblEvent3.Margin = new Padding(1);
-                    //   lblEvent3.BackColor = Color.Yellow;
-                    lblEvent3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
 
+                    lblEvent3.Padding = new Padding(0);
+
+                    lblEvent3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
                     lblEvent2.Dock = DockStyle.Top;
                     lblEvent2.Padding = new Padding(0);
-                    // lblEvent2.Margin = new Padding(1);
-                    //   lblEvent2.BackColor = Color.Violet;
                     lblEvent2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-
                     lblEvent1.Dock = DockStyle.Top;
                     lblEvent1.Padding = new Padding(0);
-                    //  lblEvent1.Margin = new Padding(1);
-                    //    lblEvent1.BackColor = Color.Tomato;
-                    //   lblEvent1.AutoSize = true;
                     lblEvent1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-
-
-
                     lblSolar24.TextAlign = System.Drawing.ContentAlignment.TopLeft;
                     lblSolar24.Font = new System.Drawing.Font("맑은고딕", 9);
                     lblSolar24.BorderStyle = BorderStyle.None;
@@ -245,7 +192,6 @@ namespace WindowsFormsApplication7
                     floorTop.Dock = DockStyle.Top;
                     floorTop.Padding = new Padding(0);
                     floorTop.Margin = new Padding(0);
-                    //floorTop.BorderStyle = BorderStyle.FixedSingle;
                     floorTop.BackColor = Color.White;
                     floorTop.AutoSize = true;
 
@@ -315,7 +261,6 @@ namespace WindowsFormsApplication7
                 }
 
                 //이벤트 표시
-                //  exEvent1[index].Text = "dfsdf";
                 SetEvent(index);
 
 
@@ -328,28 +273,18 @@ namespace WindowsFormsApplication7
         {
             if (EventDays == null) return;
             //EventDays;
-            for(int i =0; i<EventDays.Count; i++)
+            for (int i = 0; i < EventDays.Count; i++)
             {
                 String temp = EventDays[i].StartDate.Substring(4, 4);
                 if (temp == SettingDay)
                 {
                     if (exEvent1[pIndex].Text == "") exEvent1[pIndex].Text = EventDays[i].EventDesc;
-                    else if(exEvent1[pIndex].Text != "") exEvent2[pIndex].Text = EventDays[i].EventDesc;
-                    else if(exEvent2[pIndex].Text != "") exEvent3[pIndex].Text = EventDays[i].EventDesc;
+                    else if (exEvent1[pIndex].Text != "") exEvent2[pIndex].Text = EventDays[i].EventDesc;
+                    else if (exEvent2[pIndex].Text != "") exEvent3[pIndex].Text = EventDays[i].EventDesc;
 
                     Console.WriteLine(EventDays[0].EventDesc);
                 }
             }
-            
-
-            //EventDays;
-            //temp = EventDays[0].EndDate.Substring(4, 4);
-            //if (temp == SettingDay2)
-            //{
-            //    lblEvent1.Text = EventDays[0].EventDesc;
-            //    Console.WriteLine(EventDays[0].EventDesc);
-            //}
-
         }
 
         //날짜를 지운다.
