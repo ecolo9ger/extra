@@ -63,10 +63,7 @@ namespace WindowsFormsApplication7
             hlist = new HolidayList();
 
             hlist.CreateHoliday(CURRENTDATE);
-
             solar24 = new SolarTerma(CURRENTDATE);
-
-
 
         }
 
@@ -218,55 +215,62 @@ namespace WindowsFormsApplication7
         //날짜를 그린다.
         public void setDay(DateTime pDateTime)
         {
-            this.CURRENTDATE = pDateTime;
-            ClearDay();
 
-            DateTime startNum = new DateTime(CURRENTDATE.Year, CURRENTDATE.Month, 1);
-            int endNum = DateTime.DaysInMonth(CURRENTDATE.Year, CURRENTDATE.Month);
-            int startWeek = (int)startNum.DayOfWeek;
+            try
+            {
+                this.CURRENTDATE = pDateTime;
+                ClearDay();
 
-            for (int i = 1; i <= endNum; i++)
+                DateTime startNum = new DateTime(CURRENTDATE.Year, CURRENTDATE.Month, 1);
+                int endNum = DateTime.DaysInMonth(CURRENTDATE.Year, CURRENTDATE.Month);
+                int startWeek = (int)startNum.DayOfWeek;
+
+                for (int i = 1; i <= endNum; i++)
+                {
+
+                    SettingDay = CURRENTDATE.ToString("MM") + i.ToString("00");
+
+                    int index = i + startWeek - 1; //인덱스로 날짜요일 저장
+                    exLabel[index].Text = string.Format("{0:0}", i);
+
+                    //요일별 날짜색깔 지정
+                    if (index % 7 == 0)
+                    {
+                        exLabel[index].ForeColor = Color.Red;
+                    }
+
+                    //공휴일 날짜색깔 지정
+                    if (_FlagYear != CURRENTDATE.Year)//년도가 바뀌었으면 휴일을 업데이트 한다.
+                    {
+                        hlist.CreateHoliday(CURRENTDATE); //공휴일, 명절정보 가져온다.
+                        solar24 = new SolarTerma(CURRENTDATE);
+                    }
+
+
+                    //휴일 표시
+                    if (hlist.GetHoliday(SettingDay) != null)
+                    {
+                        exLabel[index].ForeColor = Color.Red;
+                        exLabel[index].Text += " " + hlist.GetHoliday(SettingDay);
+                    }
+
+                    //24절기 표시
+                    if (solar24.getSolarTermaDate(SettingDay) != null)
+                    {
+                        exLabel[index].Text += " " + solar24.getSolarTermaDate(SettingDay);
+                    }
+
+                    //이벤트 표시
+                    SetEvent(index);
+                }
+
+                _FlagYear = CURRENTDATE.Year; //1년에 한번만 공휴일 24절기 내용을 가져온다.
+            }
+            catch (Exception)
             {
 
-                SettingDay = CURRENTDATE.ToString("MM") + i.ToString("00");
-
-                int index = i + startWeek - 1; //인덱스로 날짜요일 저장
-                exLabel[index].Text = string.Format("{0:0}", i);
-
-                //요일별 날짜색깔 지정
-                if (index % 7 == 0)
-                {
-                    exLabel[index].ForeColor = Color.Red;
-                }
-
-                //공휴일 날짜색깔 지정
-                if (_FlagYear != CURRENTDATE.Year)//년도가 바뀌었으면 휴일을 업데이트 한다.
-                {
-                    hlist.CreateHoliday(CURRENTDATE); //공휴일, 명절정보 가져온다.
-                    solar24 = new SolarTerma(CURRENTDATE);
-                }
-
-
-                //휴일 표시
-                if (hlist.GetHoliday(SettingDay) != null)
-                {
-                    exLabel[index].ForeColor = Color.Red;
-                    exLabel[index].Text += " " + hlist.GetHoliday(SettingDay);
-                }
-
-                //24절기 표시
-                if (solar24.getSolarTermaDate(SettingDay) != null)
-                {
-                    exLabel[index].Text += " " + solar24.getSolarTermaDate(SettingDay);
-                }
-
-                //이벤트 표시
-                SetEvent(index);
-
-
+                throw;
             }
-
-            _FlagYear = CURRENTDATE.Year; //1년에 한번만 공휴일 24절기 내용을 가져온다.
         }
 
         public void SetEvent(int pIndex)
@@ -281,8 +285,6 @@ namespace WindowsFormsApplication7
                     if (exEvent1[pIndex].Text == "") exEvent1[pIndex].Text = EventDays[i].EventDesc;
                     else if (exEvent1[pIndex].Text != "") exEvent2[pIndex].Text = EventDays[i].EventDesc;
                     else if (exEvent2[pIndex].Text != "") exEvent3[pIndex].Text = EventDays[i].EventDesc;
-
-                    Console.WriteLine(EventDays[0].EventDesc);
                 }
             }
         }

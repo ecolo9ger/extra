@@ -97,7 +97,9 @@ namespace WindowsFormsApplication7
             _HolidayList.Add(new Holiday("1225", "성탄절"));
 
             //음력
-            //설날3일            
+            //설날3일
+            //설날 날짜지정
+                        
             _HolidayList.Add(new Holiday(ExtraManager.convertLunarSun(pCurrentDate.Year - 1, 12, 30).ToString("MMdd"), "설날"));
             _HolidayList.Add(new Holiday(ExtraManager.convertLunarSun(pCurrentDate.Year,1,1).ToString("MMdd"), "설날"));
             _HolidayList.Add(new Holiday(ExtraManager.convertLunarSun(pCurrentDate.Year, 1, 2).ToString("MMdd"), "설날"));

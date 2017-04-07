@@ -36,11 +36,15 @@ namespace WindowsFormsApplication7
             //String desc = (String)col["desc"].GetValue();
 
             List<EventDay> Events = new List<EventDay>();
-            Events.Add(new EventDay("0001", "20170506", "20170506", "제초하기"));
-            Events.Add(new EventDay("0002", "201705011", "20170511", "감귤나무 식재"));
-            Events.Add(new EventDay("00011", "201705012", "20170512", "벚나무 식재"));
-            Events.Add(new EventDay("00019", "20170525", "20170525", "한라봉 식재"));
-            Events.Add(new EventDay("00019", "20170527", "20170528", "궁천 식재"));
+            Events.Add(new EventDay("0001", "20170506", "20170506", "5제초하기"));
+            Events.Add(new EventDay("0002", "20170511", "20170511", "5감귤나무 식재"));
+            Events.Add(new EventDay("00011", "20170512", "20170512", "5벚나무 식재"));
+            Events.Add(new EventDay("00019", "20170525", "20170525", "5한라봉 식재"));
+            Events.Add(new EventDay("00019", "20170527", "20170528", "5궁천 식재"));
+
+            //작업일지 보이기
+            
+
 
             extraCalendar1.NextMonth(Events);
             currentDate = extraCalendar1.CURRENTDATE;
@@ -52,11 +56,11 @@ namespace WindowsFormsApplication7
         {
             
             List<EventDay> Events = new List<EventDay>();
-            Events.Add(new EventDay("0001", "20170405", "20170406", "탱자나무 식재"));
-            Events.Add(new EventDay("0002", "20170401", "20170406", "감귤나무 식재"));
-            Events.Add(new EventDay("00011", "20170407", "20170409", "벚나무 식재"));
-            Events.Add(new EventDay("00019", "20170405", "20170405", "한라봉 식재"));
-            Events.Add(new EventDay("00019", "20170415", "20170420", "궁천 식재"));
+            Events.Add(new EventDay("0001", "20170405", "20170406", "4탱자나무 식재"));
+            Events.Add(new EventDay("0002", "20170401", "20170406", "4감귤나무 식재"));
+            Events.Add(new EventDay("00011", "20170407", "20170409", "4벚나무 식재"));
+            Events.Add(new EventDay("00019", "20170405", "20170405", "4한라봉 식재"));
+            Events.Add(new EventDay("00019", "20170415", "20170420", "4궁천 식재"));
 
 
             extraCalendar1.PreMonth(Events);
@@ -69,12 +73,23 @@ namespace WindowsFormsApplication7
         {
          
             List<EventDay> Events = new List<EventDay>();
-            Events.Add(new EventDay("0001", "20170405", "20170406", "탱자나무 식재"));
-            Events.Add(new EventDay("0005", "20170405", "20170406", "유류비발생"));
-            Events.Add(new EventDay("0002", "20170401", "20170406", "감귤나무 식재"));
-            Events.Add(new EventDay("00011", "20170407", "20170409", "벚나무 식재"));
-            Events.Add(new EventDay("00019", "20170405", "20170405", "한라봉 식재"));
-            Events.Add(new EventDay("00019", "20170415", "20170420", "궁천 식재"));
+            Events.Add(new EventDay("0001", "20170405", "20170406", "4탱4자나무 식재"));
+            Events.Add(new EventDay("0005", "20170405", "20170406", "4유류비발생"));
+            Events.Add(new EventDay("0002", "20170401", "20170406", "4감귤나무 식재"));
+            Events.Add(new EventDay("00011", "20170407", "20170409", "4벚나무 식재"));
+            Events.Add(new EventDay("00019", "20170405", "20170405", "4한라봉 식재"));
+            Events.Add(new EventDay("00019", "20170415", "20170420", "4궁천 식재"));
+
+            WorkDiary wd = new WorkDiary();
+            wd.WDID = "0001";
+            wd.WDDate = new DateTime(2017, 04, 06);
+            wd.ItemName = "감귤";
+            wd.WorkDesc = "감귤재배하다";
+            wd.SetWDPic("c:\\pic\aaa.jpg");
+            wd.SetWDPic("c:\\pic\aaa.jpg");
+
+
+
 
             extraCalendar1.Today(Events);
             currentDate = extraCalendar1.CURRENTDATE;
