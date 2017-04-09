@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HTMLWYSIWYG, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\HTMLWYSIWYG.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
@@ -43,6 +47,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\System.Net.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,6 +64,19 @@
     </Compile>
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InSertWorkDiary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InSertWorkDiary.Designer.cs">
+      <DependentUpon>InSertWorkDiary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NameValueCollection.cs" />
+    <Compile Include="NaverLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NaverLogin.Designer.cs">
+      <DependentUpon>NaverLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="WorkDiary.cs" />
     <Compile Include="DisplayPanel.cs">
@@ -93,6 +111,12 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InSertWorkDiary.resx">
+      <DependentUpon>InSertWorkDiary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NaverLogin.resx">
+      <DependentUpon>NaverLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -115,6 +139,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AxInterop.SHDocVw.dll" />
+    <Content Include="ICSharpCode.SharpZipLib.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
