@@ -99,6 +99,12 @@
     <Compile Include="NaverLogin.Designer.cs">
       <DependentUpon>NaverLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="toNode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="toNode.Designer.cs">
+      <DependentUpon>toNode.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkDiary.cs" />
     <Compile Include="DisplayPanel.cs">
       <SubType>Component</SubType>
@@ -157,6 +163,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="toNode.resx">
+      <DependentUpon>toNode.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

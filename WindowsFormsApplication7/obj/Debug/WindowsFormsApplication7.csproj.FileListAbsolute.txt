@@ -14,3 +14,4 @@ C:\Users\yeongil\documents\visual studio 2015\Projects\WindowsFormsApplication7\
 C:\Users\yeongil\documents\visual studio 2015\Projects\WindowsFormsApplication7\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.ExtraWyzwig.resources
 C:\Users\yeongil\documents\visual studio 2015\Projects\WindowsFormsApplication7\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.Editor.resources
 C:\Users\yeongil\documents\visual studio 2015\Projects\WindowsFormsApplication7\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.LinkDialog.resources
+C:\Users\yeongil\documents\visual studio 2015\Projects\WindowsFormsApplication7\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.toNode.resources
