@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NaverLogin));
             this.button1 = new System.Windows.Forms.Button();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -38,7 +39,11 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.htmlwysiwyg1 = new HTMLWYSIWYG.htmlwysiwyg();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.editor1 = new WindowsFormsApplication7.Editor();
             this.SuspendLayout();
             // 
             // button1
@@ -56,7 +61,7 @@
             this.webBrowser1.Location = new System.Drawing.Point(45, 86);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(248, 112);
+            this.webBrowser1.Size = new System.Drawing.Size(248, 416);
             this.webBrowser1.TabIndex = 1;
             // 
             // textBox1
@@ -106,7 +111,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(403, 103);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(277, 21);
+            this.textBox3.Size = new System.Drawing.Size(524, 21);
             this.textBox3.TabIndex = 8;
             // 
             // button4
@@ -115,7 +120,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 9;
-            this.button4.Text = "button4";
+            this.button4.Text = "전송";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -129,43 +134,58 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // htmlwysiwyg1
+            // button6
             // 
-            this.htmlwysiwyg1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.htmlwysiwyg1.Location = new System.Drawing.Point(299, 130);
-            this.htmlwysiwyg1.Name = "htmlwysiwyg1";
-            this.htmlwysiwyg1.ShowAlignCenterButton = true;
-            this.htmlwysiwyg1.ShowAlignLeftButton = true;
-            this.htmlwysiwyg1.ShowAlignRightButton = true;
-            this.htmlwysiwyg1.ShowBackColorButton = true;
-            this.htmlwysiwyg1.ShowBolButton = true;
-            this.htmlwysiwyg1.ShowBulletButton = true;
-            this.htmlwysiwyg1.ShowCopyButton = false;
-            this.htmlwysiwyg1.ShowCutButton = false;
-            this.htmlwysiwyg1.ShowFontFamilyButton = true;
-            this.htmlwysiwyg1.ShowFontSizeButton = true;
-            this.htmlwysiwyg1.ShowIndentButton = true;
-            this.htmlwysiwyg1.ShowItalicButton = true;
-            this.htmlwysiwyg1.ShowJustifyButton = true;
-            this.htmlwysiwyg1.ShowLinkButton = true;
-            this.htmlwysiwyg1.ShowNewButton = false;
-            this.htmlwysiwyg1.ShowOrderedListButton = true;
-            this.htmlwysiwyg1.ShowOutdentButton = true;
-            this.htmlwysiwyg1.ShowPasteButton = false;
-            this.htmlwysiwyg1.ShowPrintButton = false;
-            this.htmlwysiwyg1.ShowTxtBGButton = true;
-            this.htmlwysiwyg1.ShowTxtColorButton = true;
-            this.htmlwysiwyg1.ShowUnderlineButton = true;
-            this.htmlwysiwyg1.ShowUnlinkButton = true;
-            this.htmlwysiwyg1.Size = new System.Drawing.Size(579, 382);
-            this.htmlwysiwyg1.TabIndex = 12;
+            this.button6.Location = new System.Drawing.Point(753, 48);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 13;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(329, 111);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "제목";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(331, 142);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "내용";
+            // 
+            // editor1
+            // 
+            this.editor1.BodyBackgroundColor = System.Drawing.Color.White;
+            this.editor1.BodyHtml = null;
+            this.editor1.BodyText = null;
+            this.editor1.DocumentText = resources.GetString("editor1.DocumentText");
+            this.editor1.EditorBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.editor1.EditorForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.editor1.FontSize = WindowsFormsApplication7.FontSize.NA;
+            this.editor1.Html = null;
+            this.editor1.Location = new System.Drawing.Point(403, 142);
+            this.editor1.Name = "editor1";
+            this.editor1.Size = new System.Drawing.Size(524, 261);
+            this.editor1.TabIndex = 17;
             // 
             // NaverLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 612);
-            this.Controls.Add(this.htmlwysiwyg1);
+            this.Controls.Add(this.editor1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox3);
@@ -195,6 +215,10 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private HTMLWYSIWYG.htmlwysiwyg htmlwysiwyg1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private Editor editor1;
     }
 }

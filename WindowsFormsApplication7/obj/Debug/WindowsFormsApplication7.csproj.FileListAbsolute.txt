@@ -11,4 +11,6 @@ C:\Users\yeongil\documents\visual studio 2015\Projects\WindowsFormsApplication7\
 C:\Users\yeongil\documents\visual studio 2015\Projects\WindowsFormsApplication7\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.Form2.resources
 C:\Users\yeongil\documents\visual studio 2015\Projects\WindowsFormsApplication7\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.InSertWorkDiary.resources
 C:\Users\yeongil\documents\visual studio 2015\Projects\WindowsFormsApplication7\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.NaverLogin.resources
-C:\Users\yeongil\documents\visual studio 2015\Projects\WindowsFormsApplication7\WindowsFormsApplication7\bin\Debug\Microsoft.mshtml.dll
+C:\Users\yeongil\documents\visual studio 2015\Projects\WindowsFormsApplication7\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.ExtraWyzwig.resources
+C:\Users\yeongil\documents\visual studio 2015\Projects\WindowsFormsApplication7\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.Editor.resources
+C:\Users\yeongil\documents\visual studio 2015\Projects\WindowsFormsApplication7\WindowsFormsApplication7\obj\Debug\WindowsFormsApplication7.LinkDialog.resources

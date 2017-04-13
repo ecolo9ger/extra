@@ -37,6 +37,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\HTMLWYSIWYG.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
@@ -59,6 +62,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Editor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editor.designer.cs">
+      <DependentUpon>Editor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtraWyzwig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExtraWyzwig.Designer.cs">
+      <DependentUpon>ExtraWyzwig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +85,12 @@
     </Compile>
     <Compile Include="InSertWorkDiary.Designer.cs">
       <DependentUpon>InSertWorkDiary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinkDialog.designer.cs">
+      <DependentUpon>LinkDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="NameValueCollection.cs" />
     <Compile Include="NaverLogin.cs">
@@ -102,8 +123,14 @@
     <Compile Include="Holiday.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Editor.resx">
+      <DependentUpon>Editor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExtraCalendar.resx">
       <DependentUpon>ExtraCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtraWyzwig.resx">
+      <DependentUpon>ExtraWyzwig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -113,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InSertWorkDiary.resx">
       <DependentUpon>InSertWorkDiary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkDialog.resx">
+      <DependentUpon>LinkDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NaverLogin.resx">
       <DependentUpon>NaverLogin.cs</DependentUpon>
@@ -125,6 +155,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
@@ -143,7 +174,22 @@
   <ItemGroup>
     <Content Include="AxInterop.SHDocVw.dll" />
     <Content Include="ICSharpCode.SharpZipLib.dll" />
+    <None Include="Resources\indent.bmp" />
+    <None Include="Resources\outdent.bmp" />
+    <None Include="Resources\uol.bmp" />
+    <None Include="Resources\fj.bmp" />
+    <None Include="Resources\rj.bmp" />
+    <None Include="Resources\cj.bmp" />
+    <None Include="Resources\lj.bmp" />
+    <None Include="Resources\link.bmp" />
+    <None Include="Resources\backcolor.bmp" />
+    <None Include="Resources\color.bmp" />
+    <None Include="Resources\underscore.bmp" />
+    <None Include="Resources\italic.bmp" />
+    <None Include="Resources\bold.bmp" />
+    <None Include="Resources\ol.bmp" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
