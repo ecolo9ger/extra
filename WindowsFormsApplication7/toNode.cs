@@ -19,7 +19,7 @@ namespace WindowsFormsApplication7
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("저장됨");
+            Console.WriteLine("저장됨"); //
         }
     }
 }
